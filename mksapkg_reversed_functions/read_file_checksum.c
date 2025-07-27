@@ -1,5 +1,5 @@
 
-uint read_file(char *__file)
+uint read_file_checksum(char *__file)
 
 {
   int __fd;

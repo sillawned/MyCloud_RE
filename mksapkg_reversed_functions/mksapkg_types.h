@@ -21,7 +21,7 @@ struct PKG_INFO {
     char apkg_temp[256];
     char bin_filename[256];
     int model_index;
-    int signed;
+    int _signed;
     undefined field5_0x24c;
     undefined field6_0x24d;
     undefined field7_0x24e;
@@ -55,7 +55,7 @@ struct PKG_INFO {
     char ps_name[68]; /* Created by retype action */
     char path[68]; /* Created by retype action */
     char version[36]; /* Created by retype action */
-    char date-YYYYMMDD[20];
+    char date_YYYYMMDD[20];
     char inst_date[20]; /* Created by retype action */
     undefined1 url[68]; /* Created by retype action */
     undefined1 url_port[20]; /* Created by retype action */
@@ -121,7 +121,7 @@ struct PKG_INFO {
     undefined field101_0x727;
     undefined1 description[260]; /* Created by retype action */
     undefined1 icon[260]; /* Created by retype action */
-    char date-MMDDYYYY[20];
+    char date_MMDDYYYY[20];
     undefined1 MinFWVer[36]; /* Created by retype action */
     undefined1 MaxFWVer[36]; /* Created by retype action */
     undefined1 Hidden[36]; /* Created by retype action */
@@ -134,78 +134,80 @@ struct PKG_INFO {
     undefined field114_0x9b6;
     undefined field115_0x9b7;
     char code_name[8];
-    undefined1 Package2[68]; /* Created by retype action */
-    undefined1 Version2[36]; /* Created by retype action */
-    int field119_0xa28;
-    qword field120_0xa2c;
-    qword supported_flag;
+    undefined1 package_name[68]; /* Created by retype action */
+    undefined1 package_version[36]; /* Created by retype action */
+    int parsed_apkgrc;
+    dword product_id_2;
+    dword custom_id_2;
+    dword model_id_2;
+    dword app_id_2;
     undefined4 pkg_signed;
-    undefined field123_0xa40;
-    undefined field124_0xa41;
-    undefined field125_0xa42;
-    undefined field126_0xa43;
-    undefined field127_0xa44;
-    undefined field128_0xa45;
-    undefined field129_0xa46;
-    undefined field130_0xa47;
-    undefined field131_0xa48;
-    undefined field132_0xa49;
-    undefined field133_0xa4a;
-    undefined field134_0xa4b;
-    undefined field135_0xa4c;
-    undefined field136_0xa4d;
-    undefined field137_0xa4e;
-    undefined field138_0xa4f;
-    undefined field139_0xa50;
-    undefined field140_0xa51;
-    undefined field141_0xa52;
-    undefined field142_0xa53;
-    undefined field143_0xa54;
-    undefined field144_0xa55;
-    undefined field145_0xa56;
-    undefined field146_0xa57;
-    undefined field147_0xa58;
-    undefined field148_0xa59;
-    undefined field149_0xa5a;
-    undefined field150_0xa5b;
-    undefined field151_0xa5c;
-    undefined field152_0xa5d;
-    undefined field153_0xa5e;
-    undefined field154_0xa5f;
-    undefined field155_0xa60;
-    undefined field156_0xa61;
-    undefined field157_0xa62;
-    undefined field158_0xa63;
-    undefined field159_0xa64;
-    undefined field160_0xa65;
-    undefined field161_0xa66;
-    undefined field162_0xa67;
-    undefined field163_0xa68;
-    undefined field164_0xa69;
-    undefined field165_0xa6a;
-    undefined field166_0xa6b;
-    undefined field167_0xa6c;
-    undefined field168_0xa6d;
-    undefined field169_0xa6e;
-    undefined field170_0xa6f;
-    undefined field171_0xa70;
-    undefined field172_0xa71;
-    undefined field173_0xa72;
-    undefined field174_0xa73;
-    undefined field175_0xa74;
-    undefined field176_0xa75;
-    undefined field177_0xa76;
-    undefined field178_0xa77;
-    undefined field179_0xa78;
-    undefined field180_0xa79;
-    undefined field181_0xa7a;
-    undefined field182_0xa7b;
+    undefined field125_0xa40;
+    undefined field126_0xa41;
+    undefined field127_0xa42;
+    undefined field128_0xa43;
+    undefined field129_0xa44;
+    undefined field130_0xa45;
+    undefined field131_0xa46;
+    undefined field132_0xa47;
+    undefined field133_0xa48;
+    undefined field134_0xa49;
+    undefined field135_0xa4a;
+    undefined field136_0xa4b;
+    undefined field137_0xa4c;
+    undefined field138_0xa4d;
+    undefined field139_0xa4e;
+    undefined field140_0xa4f;
+    undefined field141_0xa50;
+    undefined field142_0xa51;
+    undefined field143_0xa52;
+    undefined field144_0xa53;
+    undefined field145_0xa54;
+    undefined field146_0xa55;
+    undefined field147_0xa56;
+    undefined field148_0xa57;
+    undefined field149_0xa58;
+    undefined field150_0xa59;
+    undefined field151_0xa5a;
+    undefined field152_0xa5b;
+    undefined field153_0xa5c;
+    undefined field154_0xa5d;
+    undefined field155_0xa5e;
+    undefined field156_0xa5f;
+    undefined field157_0xa60;
+    undefined field158_0xa61;
+    undefined field159_0xa62;
+    undefined field160_0xa63;
+    undefined field161_0xa64;
+    undefined field162_0xa65;
+    undefined field163_0xa66;
+    undefined field164_0xa67;
+    undefined field165_0xa68;
+    undefined field166_0xa69;
+    undefined field167_0xa6a;
+    undefined field168_0xa6b;
+    undefined field169_0xa6c;
+    undefined field170_0xa6d;
+    undefined field171_0xa6e;
+    undefined field172_0xa6f;
+    undefined field173_0xa70;
+    undefined field174_0xa71;
+    undefined field175_0xa72;
+    undefined field176_0xa73;
+    undefined field177_0xa74;
+    undefined field178_0xa75;
+    undefined field179_0xa76;
+    undefined field180_0xa77;
+    undefined field181_0xa78;
+    undefined field182_0xa79;
+    undefined field183_0xa7a;
+    undefined field184_0xa7b;
     uint header_checksum;
     uint header_length;
-    undefined field185_0xa84;
-    undefined field186_0xa85;
-    undefined field187_0xa86;
-    undefined field188_0xa87;
+    undefined field187_0xa84;
+    undefined field188_0xa85;
+    undefined field189_0xa86;
+    undefined field190_0xa87;
 };
 
 typedef struct Elf64_Dyn Elf64_Dyn, *PElf64_Dyn;
@@ -624,15 +626,21 @@ struct fde_table_entry {
     dword data_loc; /* Data location */
 };
 
-typedef unsigned short    wchar16;
 typedef struct wd_models wd_models, *Pwd_models;
+
+typedef struct wd_models **test_rel_ptr;
 
 struct wd_models {
     char code_name[8];
     char product_name[16];
     dword field2_0x18;
-    qword field3_0x1c;
-    qword supported_flag;
-    dword field5_0x2c;
+    dword product_id;
+    dword custom_id;
+    dword model_id;
+    dword app_id;
+    int supported_flag;
 };
+
+typedef unsigned short    wchar16;
+typedef struct wd_models *wd_models_product;
 
