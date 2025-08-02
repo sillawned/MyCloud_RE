@@ -24,6 +24,11 @@ Although the WD Community forum still exists, it lacks a clear and complete deve
 
 Contributions are welcome! Please open issues or submit pull requests to help improve the project.
 
+## Inspiration/Credits
+
+[@steffang](https://github.com/stefaang) with the project [wdpksrc](https://github.com/WDCommunity/wdpksrc)  
+Original [MyCloudOS3](https://github.com/westerndigital-devpro/MCOS3) project
+
 ## Disclaimer
 
 This project is not affiliated with or endorsed by Western Digital. Use at your own risk.
